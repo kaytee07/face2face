@@ -3,9 +3,6 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { sidebarLinks } from "@/constants";
@@ -42,7 +39,7 @@ const MobileNav = () => {
                   className='max-sm:size-10'
                 />
                 <p className='text-[26px] font-extrabold text-white'
-                >Face2Face</p>
+                >webmeet</p>
             </Link>
             <div className="flex h-[calc(100vh-72px)]
             flex-col justify-between overflow-y-auto"
@@ -51,7 +48,7 @@ const MobileNav = () => {
                 <section className="flex h-full flex-col gap-6 
                 pt-16 text-white">
                   {sidebarLinks.map((link) => {
-                    const isActive = pathName === link.route ;
+                    const isActive = pathName === link.route || pathName.startsWith(`${link.route}/`) ;
                     return (
                       <SheetClose key={link.label} asChild>
                         <Link
@@ -86,4 +83,4 @@ const MobileNav = () => {
   )
 }
 
-export default MobileNav
+export default MobileNav;

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import MobileNav from './ui/MobileNav'
+import { UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
@@ -19,10 +20,13 @@ const Navbar = () => {
            className='max-sm:size-10'
         />
         <p className='text-[26px] font-extrabold text-white max-sm:hidden'
-        >Face2Face</p>
+        >webmeet</p>
       </Link>
-      <div className="flex-between">
+      <div className="flex-between gap-5">
         {/* clerk user management */}
+        <div className="">
+          <UserButton />
+        </div>
 
         <MobileNav/>
       </div>
