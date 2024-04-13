@@ -44,7 +44,7 @@ const MeetingModal = ({ onClose, isOpen, className, buttonText, handleClick, tit
           {title}
         </h1>
         {children}
-        <Button className="bg-blue-1 focus-visible:ring-0
+        <Button onClick={handleClick} className="bg-blue-1 focus-visible:ring-0
          focus-visible:ring-offset-0">
           {buttonIcon && (
             <Image
