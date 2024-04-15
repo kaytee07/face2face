@@ -2,8 +2,8 @@ import React from 'react'
 
 const MeetingRoom = () => {
   return (
-    <div>
-      
+    <div className="text-white">
+      Meeting Room
     </div>
   )
 }
