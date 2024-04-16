@@ -30,7 +30,7 @@ const MeetingRoom = () => {
         participantsBarPosition="right"/>
     }
   }
-
+  // zone out
   return (
     <section className="relative h-screen w-full text-white
      overflow-hidden pt-4">
