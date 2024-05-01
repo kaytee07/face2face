@@ -31,7 +31,7 @@ const MeetingModal = ({ onClose, isOpen, className, buttonText, handleClick, tit
      flex-col gap-6 border-none bg-dark-1 px-6 py-9 text-white">
       <div className="flex flex-col gap-6">
         { image && (
-          <div>
+          <div className="flex justify-center">
             <Image
               src={image}
               alt="image"
