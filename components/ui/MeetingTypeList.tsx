@@ -10,6 +10,7 @@ import { useToast } from "@/components/ui/use-toast"
 import { Toast } from "./toast"
 import { Textarea } from "./textarea"
 import ReactDatePicker from "react-datepicker";
+import { Input } from "./input"
 
 const MeetingTypeList = () => {
     const { toast } = useToast();
@@ -68,7 +69,7 @@ const MeetingTypeList = () => {
     };
 
     const meetingLink = `${process.env.
-      NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`
+      NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`;
 
   return (
     <section className="grid grid-cols-1 gap-5 
@@ -161,6 +162,26 @@ const MeetingTypeList = () => {
             handleClick={createMeeting}
             title="Start an instant Meeting"
         />
+
+        <MeetingModal
+            isOpen = {meetingState === "isJoiningMeeting"}
+            onClose={() => setMeetingState(undefined)}
+            className="text-center"
+            buttonText="Join Meeting"
+            handleClick={() => router.push(callValues.link)}
+            title="Start an instant Meeting"
+        >
+          <Input
+            placeholder="Meeting link"
+            className="border-none bg-dark-3 
+            focus-visible:ring-0
+            focus-visible:ring-offset-0"
+            onChange = {(e) => {setCallValues({...callValues, link:
+              e.target.value
+            })}
+          }
+          />
+        </MeetingModal>
         
 
     </section>
